@@ -5,6 +5,9 @@
 
 namespace Reversi
 {
+	/// <summary>
+	/// アルファベータ法で最善手探索を行うクラス
+	/// </summary>
 	class SearchSystem
 	{
 	public:

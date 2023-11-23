@@ -4,6 +4,9 @@
 
 namespace Reversi
 {
+	/// <summary>
+	/// 探索結果
+	/// </summary>
 	struct SearchResult
 	{
 		int Score;

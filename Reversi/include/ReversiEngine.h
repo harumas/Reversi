@@ -11,17 +11,27 @@
 
 namespace Reversi
 {
+	/// <summary>
+	/// 最善手探索を最高効率で探索するクラス
+	/// </summary>
 	class ReversiEngine
 	{
 	public:
 		explicit ReversiEngine(std::shared_ptr<Board>& board);
+
+		//最善手を探索して取得する
 		u64 MakeBestMove();
+
+		//シングルスレッドで探索する関数
 		u64 MakeBestMove_Single();
+
+		//マルチスレッドで探索する関数
 		u64 MakeBestMove_Parallel();
-		void SetEvaluateSide(Reversi::Side side);
-		void SetSearchDepth(int depth);
 
 		int GetSearchDepth();
+		void SetSearchDepth(int depth);
+
+		void SetEvaluateSide(Reversi::Side side);
 	private:
 
 		std::shared_ptr<Board> board;

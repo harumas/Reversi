@@ -8,6 +8,9 @@
 
 namespace Reversi
 {
+	/// <summary>
+	/// ユーザーにメッセージを表示するクラス
+	/// </summary>
 	class MessageWriter
 	{
 		std::wstring write_buffer;

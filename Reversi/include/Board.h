@@ -11,13 +11,10 @@
 
 namespace Reversi
 {
-	struct BoardInfo
-	{
-		int black_count;
-		int white_count;
-		bool is_end;
-	};
 
+	/// <summary>
+	/// 盤面を管理するクラス
+	/// </summary>
 	class Board
 	{
 	public:

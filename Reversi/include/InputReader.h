@@ -6,6 +6,9 @@
 
 namespace Reversi
 {
+	/// <summary>
+	/// ユーザーの入力を表すクラス
+	/// </summary>
 	struct Command
 	{
 		State state;
@@ -14,9 +17,13 @@ namespace Reversi
 		bool IsLegalMove(u64 legal_positions) const;
 	};
 
+	/// <summary>
+	/// ユーザーの入力を取得するクラス
+	/// </summary>
 	class InputReader
 	{
 	public:
+		//プレイヤーの入力コマンドを取得する
 		Command ReadCommand() const;
 
 	private:

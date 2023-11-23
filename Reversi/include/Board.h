@@ -24,81 +24,81 @@ namespace Reversi
 		Board();
 
 		/// <summary>
-		/// �Ֆʂɐ΂��Z�b�g���܂�
+		/// 盤面に石をセットします
 		/// </summary>
-		/// <param name="input">�Z�b�g�ʒu</param>
-		/// <param name="side">�Z�b�g���鑤</param>
+		/// <param name="input">セット位置</param>
+		/// <param name="side">セットする側</param>
 		void Set(u64 input, Side side);
 
 		/// <summary>
-		/// �w�肵���ʒu�̐΂𔽓]���A���]�ʒu���擾���܂��B
+		/// 指定した位置の石を反転し、反転位置を取得します。
 		/// </summary>
-		/// <param name="input">�ݒu�ʒu</param>
-		/// <param name="side">���]���鑤</param>
-		/// <returns>���]�ʒu</returns>
+		/// <param name="input">設置位置</param>
+		/// <param name="side">反転する側</param>
+		/// <returns>反転位置</returns>
 		u64 Flip(u64 input, Side side);
 
 		/// <summary>
-		/// �w�肵���ʒu�̐Ώ��������߂��܂�
+		/// 指定した位置の石情報を巻き戻します
 		/// </summary>
-		/// <param name="input">�����߂��ʒu</param>
-		/// <param name="side">�Z�b�g������</param>
+		/// <param name="input">巻き戻す位置</param>
+		/// <param name="side">セットした側</param>
 		void Undo(u64 input, Side side);
 
 		/// <summary>
-		/// �w�肵���ꏊ����ɂ��܂�
+		/// 指定した場所を空にします
 		/// </summary>
-		/// <param name="input">��ɂ���ʒu</param>
+		/// <param name="input">空にする位置</param>
 		void SetEmpty(u64 input);
 
 		/// <summary>
-		/// �΂̐����擾���܂�
+		/// 石の数を取得します
 		/// </summary>
-		/// <returns>���ԂƔ��Ԃ̐΂̐�</returns>
+		/// <returns>黒番と白番の石の数</returns>
 		std::pair<int, int> CountStone() const;
 
 		/// <summary>
-		/// ����\�����擾���܂�
+		/// 着手可能数を取得します
 		/// </summary>
-		/// <returns>���ԂƔ��Ԃ̒���\��</returns>
+		/// <returns>黒番と白番の着手可能数</returns>
 		std::pair<int, int> CountLegalMoves() const;
 
 		/// <summary>
-		/// �΂��u����Ă���ʒu���擾���܂�
+		/// 石が置かれている位置を取得します
 		/// </summary>
-		/// <returns>�΂��u����Ă���ʒu</returns>
+		/// <returns>石が置かれている位置</returns>
 		u64 GetAllBoard() const;
 
 		/// <summary>
-		/// ����\�ʒu���擾���܂�
+		/// 着手可能位置を取得します
 		/// </summary>
-		/// <param name="side">����\��</param>
-		/// <returns>����\�ʒu</returns>
+		/// <param name="side">着手可能側</param>
+		/// <returns>着手可能位置</returns>
 		u64 GetLegalMoves(Side side) const;
 
 		/// <summary>
-		/// �w�肵���ʒu����\���Ɍq�������}�X���擾���܂�
+		/// 指定した位置から十字に繋がったマスを取得します
 		/// </summary>
-		/// <param name="input">��ʒu</param>
-		/// <param name="others">�擾���鑤</param>
-		/// <returns>�q�������}�X�̏��</returns>
+		/// <param name="input">基準位置</param>
+		/// <param name="others">取得する側</param>
+		/// <returns>繋がったマスの情報</returns>
 		u64 GetCrossFloods(u64 input, u64 others) const;
 
 		/// <summary>
-		/// �Ֆʏ����擾���܂�
+		/// 盤面情報を取得します
 		/// </summary>
-		/// <returns>���ԂƔ��Ԃ̔Ֆʏ��</returns>
+		/// <returns>黒番と白番の盤面情報</returns>
 		std::pair<u64, u64> GetFieldData() const;
 
 		/// <summary>
-		/// �Ֆʏ��̃��Z�b�g���s���܂�
+		/// 盤面情報のリセットを行います
 		/// </summary>
 		void Reset();
 
 		/// <summary>
-		/// �Ֆʏ����㏑�����܂�
+		/// 盤面情報を上書きします
 		/// </summary>
-		/// <param name="board">�㏑��������</param>
+		/// <param name="board">上書きする情報</param>
 		void Overwrite(const Board& board);
 
 	private:

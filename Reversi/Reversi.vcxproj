@@ -38,7 +38,7 @@
     <ClCompile Include="src\Evaluator.cpp" />
     <ClCompile Include="src\GameSequencer.cpp" />
     <ClCompile Include="src\InputReader.cpp" />
-    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Main.cpp" />
     <ClCompile Include="src\MessageWriter.cpp" />
     <ClCompile Include="src\ReversiBenchmark.cpp" />
     <ClCompile Include="src\ReversiEngine.cpp" />

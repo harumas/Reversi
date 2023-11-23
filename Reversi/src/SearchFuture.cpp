@@ -12,7 +12,7 @@ namespace Reversi
 	{
 		search_system->evaluateSide = side;
 
-		//Œ»İ‚Ìƒ{[ƒhî•ñ‚ğXV‚·‚é
+		//ç¾åœ¨ã®ãƒœãƒ¼ãƒ‰æƒ…å ±ã‚’æ›´æ–°ã™ã‚‹
 		board_buffer->Overwrite(origin);
 	}
 
@@ -20,7 +20,7 @@ namespace Reversi
 	{
 		assigned_input = input;
 
-		//SearchBestMove‚ğ”ñ“¯ŠúÀs‚·‚é
+		//SearchBestMoveã‚’éåŒæœŸå®Ÿè¡Œã™ã‚‹
 		return std::async(std::launch::async, &SearchFuture::SearchBestMove, this);
 	}
 
@@ -32,13 +32,13 @@ namespace Reversi
 		constexpr int alpha = std::numeric_limits<int>::min();
 		constexpr int beta = std::numeric_limits<int>::max();
 
-		//Î‚ğ”z’u
+		//çŸ³ã‚’é…ç½®
 		board_buffer->Set(assigned_input, evaluateSide);
 		u64 flips = board_buffer->Flip(assigned_input, evaluateSide);
 
 		SearchResult info = search_system->AlphaBetaSearch(assigned_input, depth - 1, alpha, beta, nextSide);
 
-		//è‚ğŠª‚«–ß‚·
+		//æ‰‹ã‚’å·»ãæˆ»ã™
 		board_buffer->SetEmpty(assigned_input);
 		board_buffer->Undo(flips, evaluateSide);
 
